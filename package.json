@@ -2,11 +2,11 @@
   "name": "portofolio",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://arifinhabibi.my.id",
+  "homepage": "https://cvarifinhabibi.my.id",
   "author": {
     "email": "arifinhabibi76@gmail.com",
     "name": "Muhammad Arifin Habibi",
-    "url": "https://arifinhabibi.my.id"
+    "url": "https://cvarifinhabibi.my.id"
   },
   "description": "This is just website personal portofolio",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "Visualization",
     "Other"
   ],
-  "displayName": "arifinhabibi.my.id",
+  "displayName": "cvarifinhabibi.my.id",
   "markdown": "github",
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -36,6 +36,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
