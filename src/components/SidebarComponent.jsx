@@ -30,14 +30,14 @@ import { deepOrange } from "@mui/material/colors";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const drawerWidth = 250;
+const drawerWidth = "20%";
 
 function SidebarComponent() {
   const [hideBarMobile, setHideBarMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     AOS.init({
-      offset: 500, // Offset (in pixels) from the top of the window to start animations
+      offset: 500, // Offset (in pixels) from the top of the window to st/adminart animations
       duration: 1500, // Duration (in milliseconds) of the animation
       easing: "ease-in-out", // Easing function for the animation
     });
@@ -64,8 +64,8 @@ function SidebarComponent() {
             cursor: "pointer",
           }}
           onClick={handleMobile}
-          color="primary">
-          <MenuIcon />
+          color="light">
+          <MenuIcon fontSize="large" />
         </Button>
         <Drawer
           variant="temporary"
@@ -88,20 +88,73 @@ function SidebarComponent() {
               cursor: "pointer",
             }}
             onClick={handleMobile}
-            color="primary">
-            <ClearIcon />
+            color="danger">
+            <ClearIcon fontSize="large" />
           </Button>
           <List
             sx={{
               marginTop: "50px",
             }}>
-            <Link to={"/"}>
+            <Link to={"/admin/dashboard"}>
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
                     <PersonSearchIcon />
                   </ListItemIcon>
                   <ListItemText primary={"Introduce"} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to={"/admin/experiences"}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <WorkIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Experiences"} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to={"/admin/projects"}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <CodeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Projects"} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          </List>
+          <Divider />
+          <List>
+            <Link to={"/admin/educations"}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <SchoolIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Educations"} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to={"/admin/certificates"}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <StarsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Certificates"} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+            <Link to={"/admin/media-social"}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PublicIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Media Social"} />
                 </ListItemButton>
               </ListItem>
             </Link>
@@ -157,7 +210,7 @@ function SidebarComponent() {
             </div>
             <Divider />
             <List>
-              <Link to={"/"}>
+              <Link to={"/admin/dashboard"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -167,7 +220,7 @@ function SidebarComponent() {
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to={"/experiences"}>
+              <Link to={"/admin/experiences"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -177,7 +230,7 @@ function SidebarComponent() {
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to={"/projects"}>
+              <Link to={"/admin/projects"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -190,7 +243,7 @@ function SidebarComponent() {
             </List>
             <Divider />
             <List>
-              <Link to={"/educations"}>
+              <Link to={"/admin/educations"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -200,7 +253,7 @@ function SidebarComponent() {
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to={"/certificates"}>
+              <Link to={"/admin/certificates"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -210,7 +263,7 @@ function SidebarComponent() {
                   </ListItemButton>
                 </ListItem>
               </Link>
-              <Link to={"/media-social"}>
+              <Link to={"/admin/media-social"}>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
