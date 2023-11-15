@@ -8,6 +8,10 @@ import MainMediaSosialPage from "./pages/media-sosial/MainMediaSosialPage";
 import LoginPage from "./pages/Auth/LoginPage";
 import HomePageView from "./views/HomePageView";
 import ExperiencePageView from "./views/ExperiencePageView";
+import ProjectPageView from "./views/ProjectPageView";
+import EducationPageView from "./views/EducationPageView";
+import CertificatePageView from "./views/CertificatePageView";
+import ContactPageView from "./views/ContactPageView";
 
 const token = localStorage.getItem("token");
 
@@ -23,6 +27,22 @@ const router = createBrowserRouter([
   {
     path: "/experiences",
     element: <ExperiencePageView />,
+  },
+  {
+    path: "/projects",
+    element: <ProjectPageView />,
+  },
+  {
+    path: "/educations",
+    element: <EducationPageView />,
+  },
+  {
+    path: "/certificates",
+    element: <CertificatePageView />,
+  },
+  {
+    path: "/contacts",
+    element: <ContactPageView />,
   },
   {
     path: "/login",

@@ -44,12 +44,6 @@ function HomePageView() {
     });
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      alert("sorry this website still on development");
-    }, 5000);
-  }, []);
-
   return (
     <div>
       <HeaderComponent />
@@ -58,11 +52,6 @@ function HomePageView() {
         options={videoJsOptions}
         onReady={handlePlayerReady}
       />
-      <div className="container mx-auto">
-        <h1 className="text-2xl my-10 font-semibold text-center">
-          Experiences
-        </h1>
-      </div>
     </div>
   );
 }
