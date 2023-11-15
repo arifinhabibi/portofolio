@@ -5,11 +5,22 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import router from "./router.js";
 import { ThemeProvider, createTheme } from "@mui/material";
+import "video.js/dist/video-js.css";
+
 
 const theme = createTheme({
   palette: {
     primary: {
+      main: "#0300E5",
+    },
+    danger: {
       main: "#ff0000",
+    },
+    light: {
+      main: "#fff",
+    },
+    dark: {
+      main: "#000",
     },
   },
 });

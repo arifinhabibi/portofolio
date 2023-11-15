@@ -5,6 +5,11 @@ import MainProjectsPage from "./pages/Projects/MainProjectsPage";
 import MainEducationsPage from "./pages/educations/MainEducationsPage";
 import MainCertificatesPage from "./pages/certificates/MainCertificatesPage";
 import MainMediaSosialPage from "./pages/media-sosial/MainMediaSosialPage";
+import LoginPage from "./pages/Auth/LoginPage";
+import HomePageView from "./views/HomePageView";
+import ExperiencePageView from "./views/ExperiencePageView";
+
+const token = localStorage.getItem("token");
 
 const router = createBrowserRouter([
   {
@@ -13,27 +18,39 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Homepage />,
+    element: <HomePageView />,
   },
   {
     path: "/experiences",
-    element: <MainExperiencesPage />,
+    element: <ExperiencePageView />,
   },
   {
-    path: "/projects",
-    element: <MainProjectsPage />,
+    path: "/login",
+    element: token ? <Navigate to={"/admin/dashboard"} /> : <LoginPage />,
   },
   {
-    path: "/educations",
-    element: <MainEducationsPage />,
+    path: "/admin/dashboard",
+    element: !token ? <Navigate to={"/login"} /> : <Homepage />,
   },
   {
-    path: "/certificates",
-    element: <MainCertificatesPage />,
+    path: "/admin/experiences",
+    element: !token ? <Navigate to={"/login"} /> : <MainExperiencesPage />,
   },
   {
-    path: "/media-social",
-    element: <MainMediaSosialPage />,
+    path: "/admin/projects",
+    element: !token ? <Navigate to={"/login"} /> : <MainProjectsPage />,
+  },
+  {
+    path: "/admin/educations",
+    element: !token ? <Navigate to={"/login"} /> : <MainEducationsPage />,
+  },
+  {
+    path: "/admin/certificates",
+    element: !token ? <Navigate to={"/login"} /> : <MainCertificatesPage />,
+  },
+  {
+    path: "/admin/media-social",
+    element: !token ? <Navigate to={"/login"} /> : <MainMediaSosialPage />,
   },
 ]);
 
