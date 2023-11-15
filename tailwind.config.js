@@ -8,6 +8,7 @@ module.exports = {
         secondary: "var(--secondary-color)",
         dark: "var(--dark-color)",
         light: "var(--light-color)",
+        danger: "var(--danger-color",
         body: "var(--body-color)",
       },
       fontFamily: {
@@ -16,7 +17,7 @@ module.exports = {
       },
       screens: {
         mobile: "480px",
-        tablet: "640px",
+        tablet: "800px",
         laptop: "1024px",
         desktop: "1280px",
       },
