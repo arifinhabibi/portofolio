@@ -41,6 +41,10 @@ function HeroSectionComponent(props) {
     };
   }, [playerRef]);
 
+  const redirectToDownload = () => {
+    return window.open("https://resume-arifinhabibi.tiiny.site/", "_blank");
+  };
+
   return (
     <div data-vjs-player>
       <div ref={videoRef} className="mobile:h-full tablet:h-full" />
@@ -48,7 +52,9 @@ function HeroSectionComponent(props) {
         <span>Hi im</span>
         <h1 className="uppercase text-3xl">Muhamad Arifin Habibi</h1>
         <p className="w-80">A website developer from Indonesia</p>
-        <button className="bg-primary my-10 py-4 px-5 max-tablet:px-4 max-tablet:py-2 max-tablet:text-sm max-tablet:my-5 rounded-md">
+        <button
+          onClick={redirectToDownload}
+          className="bg-primary my-10 py-4 px-5 max-tablet:px-4 max-tablet:py-2 max-tablet:text-sm max-tablet:my-5 rounded-md">
           Download my resume
         </button>
       </div>
