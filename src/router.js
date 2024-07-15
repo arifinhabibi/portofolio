@@ -25,6 +25,9 @@ const router = createBrowserRouter([
     element: <HomePageView />,
   },
   {
+    path: "/public/*",
+  },
+  {
     path: "/experiences",
     element: <ExperiencePageView />,
   },

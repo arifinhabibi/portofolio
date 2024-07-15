@@ -12,9 +12,7 @@ function HeaderComponent() {
 
   return (
     <div>
-      <nav className="flex justify-between px-10 h-20 items-center w-full absolute top-0 z-50 max-tablet:hidden">
-        <h1 className="text-white">Welcome!</h1>
-
+      <nav className="flex justify-end px-10 py-10 items-center w-full absolute top-0 z-50 max-tablet:hidden bg-secondary">
         <div className="flex items-center laptop:gap-2 tablet:gap-1 capitalize text-light nav">
           <li className="list-none">
             <NavLink exact to={"/"} activeClassName="active">
@@ -22,38 +20,50 @@ function HeaderComponent() {
             </NavLink>
           </li>
           <li className="list-none">
-            <NavLink to={"/experiences"} activeClassName="active">
+            <NavLink
+              to={
+                "https://www.linkedin.com/in/arifinhabibi/details/experience/"
+              }
+              activeClassName="active">
               experiences
             </NavLink>
           </li>
           <li className="list-none">
-            <NavLink to={"/projects"} activeClassName="active">
+            <NavLink
+              to={"https://github.com/arifinhabibi?tab=repositories"}
+              activeClassName="active">
               projects
             </NavLink>
           </li>
           <li className="list-none">
-            <NavLink to={"/educations"} activeClassName="active">
+            <NavLink
+              to={"https://www.linkedin.com/in/arifinhabibi/details/education/"}
+              activeClassName="active">
               educations
             </NavLink>
           </li>
           <li className="list-none">
-            <NavLink to={"/certificates"} activeClassName="active">
+            <NavLink
+              to={
+                "https://www.linkedin.com/in/arifinhabibi/details/certifications/"
+              }
+              activeClassName="active">
               certificates
             </NavLink>
           </li>
-          <li className="list-none select-none text-4xl font-extralight">|</li>
-          <li className="list-none">
+          {/* <li className="list-none select-none text-4xl font-extralight">|</li> */}
+          {/* <li className="list-none">
             <button
               className="bg-body px-6 py-3 font-semibold text-dark rounded capitalize"
               onClick={toContactPage}>
               let's hire me
             </button>
-          </li>
+          </li> */}
         </div>
       </nav>
 
       <div className="z-40 tablet:hidden">
-        <DehazeIcon className="text-white absolute" />
+        <DehazeIcon className="text-white absolute right-0 m-5 w-48 h-48" />
       </div>
     </div>
   );

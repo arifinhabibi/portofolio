@@ -1,100 +1,85 @@
-import React, { useEffect, useRef } from "react";
-import videojs from "video.js";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-function HeroSectionComponent(props) {
-  const videoRef = useRef(null);
-  const playerRef = useRef(null);
-  const { options, onReady } = props;
-
-  useEffect(() => {
-    if (!playerRef.current) {
-      // The Video.js player needs to be _inside_ the component el for React 18 Strict Mode.
-      const videoElement = document.createElement("video-js");
-
-      videoElement.classList.add("vjs-big-play-centered");
-      videoRef.current.appendChild(videoElement);
-
-      const player = (playerRef.current = videojs(videoElement, options, () => {
-        videojs.log("player is ready");
-        onReady && onReady(player);
-      }));
-
-      // You could update an existing player in the `else` block here
-      // on prop change, for example:
-    } else {
-      const player = playerRef.current;
-
-      player.autoplay(options.autoplay);
-      player.src(options.sources);
-    }
-  }, [options, videoRef]);
-
-  // Dispose the Video.js player when the functional component unmounts
-  useEffect(() => {
-    const player = playerRef.current;
-
-    return () => {
-      if (player && !player.isDisposed()) {
-        player.dispose();
-        playerRef.current = null;
-      }
-    };
-  }, [playerRef]);
-
-  const redirectToDownload = () => {
-    return window.open("https://resume-arifinhabibi.tiiny.site/", "_blank");
+function HeroSectionComponent() {
+  const handleDownload = () => {
+    const downloadUrl = "/upload/profile.pdf";
+    window.open(downloadUrl, "resizeable,scrollbar");
   };
 
-  const connects = [
-    {
-      name: "github",
-      image: "https://cdn-icons-png.flaticon.com/512/5968/5968896.png",
-      url: "https://github.com/arifinhabibi",
-    },
-    {
-      name: "tiktok",
-      image:
-        "https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg",
-      url: "https://www.tiktok.com/@arifinhabibi_",
-    },
-    {
-      name: "linkedin",
-      image:
-        "https://img.freepik.com/premium-vector/linkedin-logo_578229-227.jpg",
-      url: "https://www.linkedin.com/in/muhammad-arifin-habibi-4a7572215/",
-    },
-    {
-      name: "instagram",
-      image:
-        "https://img.freepik.com/premium-vector/instagram-app-icon-social-media-logo-vector-illustration_277909-403.jpg?w=2000",
-      url: "https://www.instagram.com/arifinhabibi_",
-    },
-  ];
-
   return (
-    <div data-vjs-player>
-      <div ref={videoRef} className="mobile:h-full tablet:h-full" />
-      <div className="absolute z-50 tablet:top-72  max-tablet:top-60 laptop:right-60 tablet:right-28 max-tablet:left-10 text-white">
-        <span>Hi i'm</span>
-        <h1 className="uppercase text-3xl">Muhammad Arifin Habibi</h1>
-        <p className="w-80">A website developer from Indonesia</p>
-        <button
-          onClick={redirectToDownload}
-          className="bg-primary my-4 py-4 px-5 max-tablet:px-5 max-tablet:py-3 max-tablet:text-sm max-tablet:my-5 rounded-md capitalize">
-          Download my resume
-        </button>
-        <p className="mb-2">Connect with me</p>
-        <div className="flex">
-          {connects.map((connect) => (
-            <a href={connect.url}>
+    <div className="flex justify-between items-end px-28 max-mobile:px-7 max-mobile:relative max-mobile:h-screen absolute bottom-0  bg-secondary">
+      <div className="w-2/3 max-mobile:w-full py-10 z-10">
+        <h1 className="text-3xl font-semibold">Welcome to My Portfolio!</h1>
+        <h1 className="text-4xl font-bold my-5">Muhammad Arifin Habibi</h1>
+        <p className="text-lg">
+          I'm a software engineer with a passion for technology and design. I'm
+          currently looking for new opportunities to grow my skills and
+          contribute to the tech community.
+        </p>
+        <div className="flex gap-5 items-center max-mobile:flex-col max-mobile:py-10">
+          <button className="border-4 px-8 py-4 my-10" onClick={handleDownload}>
+            Resume
+          </button>
+          <span className="text-6xl text-white font-thin">|</span>
+          <div className="flex gap-2">
+            <a
+              href="https://www.linkedin.com/in/arifinhabibi"
+              className=""
+              target="_blank"
+              rel="noopener noreferrer">
               <img
-                src={connect.image}
-                className="w-10 h-10 mx-2 bg-white p-1 rounded-full"
+                className="w-10 h-10 user-select-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png"
+                alt="linked"
               />
             </a>
-          ))}
+            <a
+              href="https://www.github.com/arifinhabibi"
+              className=""
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                className="w-10 h-10 user-select-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
+                alt="linked"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/arifinhabibi_"
+              className=""
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                className="w-10 h-10 user-select-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/600px-Instagram_logo_2022.png"
+                alt="linked"
+              />
+            </a>
+            <a
+              href="https://wa.me/+6285882529291"
+              className=""
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                className="w-10 h-10 user-select-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/50px-WhatsApp_logo-color-vertical.png"
+                alt="linked"
+              />
+            </a>
+          </div>
         </div>
       </div>
+      <div className="z-50">
+        <div>
+          <img
+            className="h-auto mx-auto max-mobile:hidden"
+            src="/image/dark.png"
+          />
+        </div>
+      </div>
+      <div className="rotated-square max-laptop:hidden"></div>
     </div>
   );
 }
