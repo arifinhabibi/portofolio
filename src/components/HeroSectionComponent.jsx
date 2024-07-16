@@ -9,7 +9,7 @@ function HeroSectionComponent() {
   };
 
   return (
-    <div className="flex justify-between items-end px-28 max-mobile:px-7 max-mobile:relative max-mobile:h-screen absolute bottom-0  bg-secondary">
+    <div className="flex justify-between items-end px-28 max-mobile:px-7 max-mobile:relative max-mobile:py-10 absolute bottom-0  bg-secondary">
       <div className="w-2/3 max-mobile:w-full py-10 z-10">
         <h1 className="text-3xl font-semibold">Welcome to My Portfolio!</h1>
         <h1 className="text-4xl font-bold my-5">Muhammad Arifin Habibi</h1>
